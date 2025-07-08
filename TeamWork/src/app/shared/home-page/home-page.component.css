@@ -1,0 +1,273 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f2ee;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main Content Layout */
+.main-content {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0a66c2, #004182);
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-avatar.small {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-title {
+    color: #666;
+    font-size: 14px;
+}
+
+.stats {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Center Feed */
+.center-feed {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.create-post {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.create-post-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.create-post-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.post-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.post-action:hover {
+    background-color: #f0f0f0;
+}
+
+/* Job Posts */
+.job-post {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.company-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.company-avatar.green {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.company-avatar.purple {
+    background: linear-gradient(135deg, #9C27B0, #8E24AA);
+}
+
+.job-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.job-meta {
+    color: #666;
+    font-size: 14px;
+}
+
+.job-description {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.job-tag {
+    background-color: #e7f3ff;
+    color: #0a66c2;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.job-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.interaction-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.interact-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.interact-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.apply-btn {
+    background-color: #0a66c2;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: #004182;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.trending-jobs h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.trending-job {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.trending-job:last-child {
+    border-bottom: none;
+}
+
+.trending-job h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.trending-job p {
+    color: #666;
+    font-size: 12px;
+}

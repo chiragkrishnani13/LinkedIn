@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedComponent } from './shared.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
-    SharedComponent
+    SharedComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomePageComponent
   ],
   imports: [
     CommonModule
