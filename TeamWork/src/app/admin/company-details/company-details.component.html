@@ -1,0 +1,77 @@
+<form [formGroup]="companyDetails" (ngSubmit)="submitData()">
+    <div>
+        <h4>Company Name:</h4>
+    <input type="text" formControlName="companyName" placeholder="Enter Company Name...">
+    <p *ngIf="isRequired('companyName')">
+        *Company Name is Requried
+    </p>
+
+    </div>
+    <div>
+    <h4>
+        Company logo:
+    </h4>
+    <input type="file" formControlName="companyLogo">
+    <p *ngIf="isRequired('companyLogo')">
+        *Company Logo is Requried
+    </p>
+    </div>
+    <div>
+        <h4>Role Of job</h4>
+        <input type="text" formControlName="role">
+    </div>
+    
+    <div>
+        <h4>About The Role</h4>
+        <textarea placeholder="Enter the Role Details..." formControlName="roleDetails"></textarea>
+        <p *ngIf="isRequired('role')">
+            *Role Details is Requried
+        </p>
+    </div>
+
+    
+    <div>
+    <h4>
+        Job Details:
+    </h4>
+    <textarea placeholder="Enter the Job Details..." formControlName="jobDetails"></textarea>
+    <p *ngIf="isRequired('jobDetails')">
+            *Job Details is Requried
+    </p>
+    </div>
+    <h4>
+        Job Requirements:
+    </h4>
+    <textarea placeholder="Enter the Requirements" formControlName="requirements"></textarea>
+    <p *ngIf="isRequired('requirements')">
+            *Job Requirements is Requried
+    </p>
+    
+    
+    <div>
+        <h4>Job Duration:</h4>
+
+        <h5>from:</h5>
+        <input formControlName="durationFrom" type="date">
+
+        <h5>
+            To
+        </h5>
+        <input formControlName="durationTo" type="date">
+    </div>
+     <p *ngIf="isRequired('durationFrom')">
+            *Duration Of Job is Requried
+    </p>
+     <p *ngIf="isRequired('durationTo')">
+            *Duration Of Job is Requried
+    </p>
+    <div>
+        <h4>location</h4>
+        <input type="text" formControlName="location">
+        <p *ngIf="isRequired('location')">
+            *location Of Job is Requried
+        </p>
+    </div>
+    <button>submit</button>
+
+</form>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CompanyService } from 'src/app/admin/services/company.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  companys:any[] = []
+  constructor(private service:CompanyService){
+
+  }
+  ngOnInit(){
+    this.companys =  this.service.companys
+  }
 
 }
