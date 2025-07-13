@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 // Define a type for user objects
 type User = {
@@ -26,7 +27,7 @@ export class RegisterComponent {
   isLoading: boolean = false;
   errorMessage: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   onSubmit(): void {
     this.isLoading = true;
@@ -86,6 +87,9 @@ export class RegisterComponent {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     
+    // Make sure we're logged out
+    this.authService.logout();
+    
     // Log all users to console
     console.log('All users:', users);
     
@@ -98,6 +102,11 @@ export class RegisterComponent {
     this.router.navigate(['/login']);
   }
 }
+
+
+
+
+
 
 
 

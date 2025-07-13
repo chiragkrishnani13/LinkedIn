@@ -194,6 +194,19 @@ body {
     font-weight: 500;
 }
 
+.view-more-link {
+    display: inline-block;
+    color: #0a66c2;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.view-more-link:hover {
+    text-decoration: underline;
+}
+
 .job-actions {
     display: flex;
     justify-content: space-between;
