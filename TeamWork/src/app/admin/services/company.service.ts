@@ -6,10 +6,16 @@ import { Injectable } from '@angular/core';
 export class CompanyService {
 
   constructor() { 
-    this.getCompany()
+    this.loadData()
   }
   companys:any[] = []
   companyCount:any = 0
+  loadData(){
+    this.companyCount =Number(localStorage.getItem('companyCount') ?? 1)
+    this.companys = JSON.parse(localStorage.getItem("companys")??"[]")
+
+    
+  }
   insertCompany(data:any){
     this.companyCount++
     let company={
@@ -18,6 +24,7 @@ export class CompanyService {
     }
     this.companys.push(company)
     localStorage.setItem("companys",JSON.stringify(this.companys))
+    localStorage.setItem('companyCount',this.companyCount.toString())
   }
   getCompany(){
     this.companys = JSON.parse(localStorage.getItem("companys")??"[]")

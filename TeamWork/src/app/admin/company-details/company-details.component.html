@@ -1,77 +1,66 @@
-<form [formGroup]="companyDetails" (ngSubmit)="submitData()">
-    <div>
-        <h4>Company Name:</h4>
-    <input type="text" formControlName="companyName" placeholder="Enter Company Name...">
-    <p *ngIf="isRequired('companyName')">
-        *Company Name is Requried
-    </p>
+<form class="company-form" [formGroup]="companyDetails" (ngSubmit)="submitData()">
 
-    </div>
-    <div>
-    <h4>
-        Company logo:
-    </h4>
-    <input type="file" formControlName="companyLogo">
-    <p *ngIf="isRequired('companyLogo')">
-        *Company Logo is Requried
-    </p>
-    </div>
-    <div>
-        <h4>Role Of job</h4>
-        <input type="text" formControlName="role">
-    </div>
-    
-    <div>
-        <h4>About The Role</h4>
-        <textarea placeholder="Enter the Role Details..." formControlName="roleDetails"></textarea>
-        <p *ngIf="isRequired('role')">
-            *Role Details is Requried
-        </p>
-    </div>
+  <h2 class="form-title"> Job Details</h2>
 
-    
-    <div>
-    <h4>
-        Job Details:
-    </h4>
-    <textarea placeholder="Enter the Job Details..." formControlName="jobDetails"></textarea>
-    <p *ngIf="isRequired('jobDetails')">
-            *Job Details is Requried
-    </p>
-    </div>
-    <h4>
-        Job Requirements:
-    </h4>
-    <textarea placeholder="Enter the Requirements" formControlName="requirements"></textarea>
-    <p *ngIf="isRequired('requirements')">
-            *Job Requirements is Requried
-    </p>
-    
-    
-    <div>
-        <h4>Job Duration:</h4>
+  <div class="form-group">
+    <label>Company Name:</label>
+    <input type="text" formControlName="companyName" placeholder="Enter Company Name..." />
+    <p class="error" *ngIf="isRequired('companyName')">* Company Name is Required</p>
+  </div>
 
-        <h5>from:</h5>
-        <input formControlName="durationFrom" type="date">
+  <div class="form-group">
+    <label>Company Logo:</label>
+    <input type="file" formControlName="companyLogo" />
+    <p class="error" *ngIf="isRequired('companyLogo')">* Company Logo is Required</p>
+  </div>
 
-        <h5>
-            To
-        </h5>
-        <input formControlName="durationTo" type="date">
+  <div class="form-group">
+    <label>Role Of Job:</label>
+    <input type="text" formControlName="role" placeholder="Enter Job Role..." />
+  </div>
+
+  <div class="form-group">
+    <label>About The Role:</label>
+    <textarea formControlName="roleDetails" placeholder="Enter the Role Details..."></textarea>
+    <p class="error" *ngIf="isRequired('role')">* Role Details is Required</p>
+  </div>
+
+  <div class="form-group">
+    <label>Job Details:</label>
+    <textarea formControlName="jobDetails" placeholder="Enter the Job Details..."></textarea>
+    <p class="error" *ngIf="isRequired('jobDetails')">* Job Details is Required</p>
+  </div>
+
+  <div class="form-group">
+    <label>Job Requirements:</label>
+    <textarea formControlName="requirements" placeholder="Enter the Requirements"></textarea>
+    <p class="error" *ngIf="isRequired('requirements')">* Job Requirements is Required</p>
+  </div>
+
+  <div class="form-group duration-group">
+    <label>Job Duration:</label>
+    <div class="duration-fields">
+      <div>
+        <label>From:</label>
+        <input type="date" formControlName="durationFrom" />
+      </div>
+      <div>
+        <label>To:</label>
+        <input type="date" formControlName="durationTo" />
+      </div>
     </div>
-     <p *ngIf="isRequired('durationFrom')">
-            *Duration Of Job is Requried
-    </p>
-     <p *ngIf="isRequired('durationTo')">
-            *Duration Of Job is Requried
-    </p>
-    <div>
-        <h4>location</h4>
-        <input type="text" formControlName="location">
-        <p *ngIf="isRequired('location')">
-            *location Of Job is Requried
-        </p>
-    </div>
-    <button>submit</button>
+    <p class="error" *ngIf="isRequired('durationFrom')">* Duration From is Required</p>
+    <p class="error" *ngIf="isRequired('durationTo')">* Duration To is Required</p>
+  </div>
+
+  <div class="form-group">
+    <label>Location:</label>
+    <input type="text" formControlName="location" placeholder="Enter Location..." />
+    <p class="error" *ngIf="isRequired('location')">* Location is Required</p>
+  </div>
+
+  <div class="submit-container">
+    <button type="submit">Submit</button>
+  </div>
 
 </form>
