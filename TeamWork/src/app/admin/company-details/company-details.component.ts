@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CompanyService } from '../services/company.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-details',
@@ -21,7 +22,7 @@ export class CompanyDetailsComponent {
     location:new FormControl('',[Validators.required]),
 
   })
-  constructor(private companyService:CompanyService ){
+  constructor(private companyService:CompanyService,private router:Router ){
 
   }
   isRequired(name:string){
@@ -30,6 +31,6 @@ export class CompanyDetailsComponent {
 
   submitData(){
     this.companyService.insertCompany(this.companyDetails.value)
+    this.router.navigate(['home'])
   }
-
 }

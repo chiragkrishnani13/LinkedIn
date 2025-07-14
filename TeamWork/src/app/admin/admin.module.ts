@@ -1,7 +1,10 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { CompanyService } from './services/company.service';
 
 @NgModule({
   declarations: [
@@ -9,11 +12,14 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     CompanyDetailsComponent
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [
+    CompanyService
+  ]
 })
 export class AdminModule { }

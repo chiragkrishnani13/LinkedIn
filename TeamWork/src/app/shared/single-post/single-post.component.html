@@ -1,1 +1,39 @@
-<p>single-post works!</p>
+<!-- <div>
+    <h1>{{post.companyName}}</h1>
+    <img [src]="getImageUrl(post.companyLogo)" >
+    <p>{{post.role}}</p>
+    <h4>About The Job</h4>
+    <p>{{post.jobDetails}}</p>
+    <h4>Key Requirements:</h4>
+    <p>{{post.roleDetails}}</p>
+    <h4>Duration</h4>
+    <p>From:</p>
+    <span>{{post.durationFrom}}</span>
+    <p>To:</p>
+    <span>{{post.durationTo}}</span>
+    <div>
+    <button>Apply Now</button>
+    </div>
+</div> -->
+<div class="job-card">
+  <h1 class="company-name">{{ post.companyName }}</h1>
+  <img [src]="getImageUrl(post.companyLogo)" alt="Company Logo" class="company-logo" />
+  
+  <p class="job-role">{{ post.role }}</p>
+  
+  <h4>About The Job</h4>
+  <p class="job-details">{{ post.jobDetails }}</p>
+  
+  <h4>Key Requirements:</h4>
+  <p class="role-details">{{ post.roleDetails }}</p>
+  
+  <h4>Duration</h4>
+  <div class="duration">
+    <p>From: <span>{{ post.durationFrom }}</span></p>
+    <p>To: <span>{{ post.durationTo }}</span></p>
+  </div>
+  
+  <div class="apply-btn-container">
+    <button class="apply-btn">Apply Now</button>
+  </div>
+</div>

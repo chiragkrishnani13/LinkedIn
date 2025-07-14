@@ -5,8 +5,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CompanyDetailsComponent } from './admin/company-details/company-details.component';
-import { SharedComponent } from './shared/shared.component';
+import { HomePageComponent } from './shared/home-page/home-page.component';
 import { SinglePostComponent } from './shared/single-post/single-post.component';
+import { SharedComponent } from './shared/shared.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

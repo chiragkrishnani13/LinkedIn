@@ -17,8 +17,11 @@ export class SinglePostComponent {
     this.getDetails()
   }
   getDetails(){
-    this.post = this.companyService.companys.filter((elem)=>elem.id === this.id)
+    this.post = this.companyService.companys.find((elem)=>elem.id === this.id)
     console.log(this.post);
+  }
+  getImageUrl(value:any){
+    return "assets/imagesUrl/"+value
   }
 
 }

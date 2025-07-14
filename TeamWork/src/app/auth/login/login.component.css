@@ -1,165 +1,122 @@
-/* Login Page Styles */
+/* Login component styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f2ef;
+  margin: 0;
+  padding: 0;
+}
 
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f3f2ef;
+  max-width: 400px;
+  margin: 100px auto 40px;
   padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  width: 100%;
-  margin: 0;
-  padding-top: 80px; /* Add space for fixed navbar */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .login-box {
-  background-color: white;
-  padding: 32px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 400px;
+  padding: 20px;
 }
 
 h2 {
-  font-size: 28px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.9);
-  margin-bottom: 4px;
+  color: #0a66c2;
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading */
 }
 
 .subtitle {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 24px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center; /* Center the subtitle */
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin-bottom: 5px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.75);
 }
 
 input {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px;
-  line-height: 1.5;
-  box-sizing: border-box;
+  font-size: 14px;
 }
 
-input:focus {
-  border-color: #0a66c2;
-  outline: none;
-  box-shadow: 0 0 0 1px #0a66c2;
+.error-message {
+  color: #d11124;
+  margin: 10px 0;
+  font-size: 14px;
 }
 
 .forgot-password {
   text-align: right;
-  margin-top: -10px;
-  margin-bottom: 16px;
+  margin: 10px 0;
 }
 
 .forgot-password a {
-  font-size: 14px;
   color: #0a66c2;
   text-decoration: none;
-}
-
-.forgot-password a:hover {
-  text-decoration: underline;
+  font-size: 14px;
 }
 
 .submit-container {
-  margin-top: 16px;
+  margin: 20px 0;
 }
 
 .submit-button {
   width: 100%;
+  padding: 10px;
   background-color: #0a66c2;
   color: white;
   border: none;
-  padding: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
+  border-radius: 24px;
   font-size: 16px;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .submit-button:hover {
   background-color: #004182;
 }
 
-.submit-button:disabled {
-  background-color: #0073b1;
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
 .divider {
   text-align: center;
-  margin: 16px 0;
+  margin: 20px 0;
   position: relative;
 }
 
-.divider::before, .divider::after {
+.divider:before {
   content: "";
   position: absolute;
   top: 50%;
-  width: 45%;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.15);
-}
-
-.divider::before {
   left: 0;
-}
-
-.divider::after {
   right: 0;
+  height: 1px;
+  background-color: #ddd;
 }
 
 .divider span {
-  background-color: white;
+  background-color: #fff;
   padding: 0 10px;
   position: relative;
-  color: rgba(0, 0, 0, 0.6);
+  color: #666;
 }
 
 .register-link {
   text-align: center;
-  margin-top: 16px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.75);
+  margin-top: 20px;
+  font-size: 14px;
 }
 
-a {
+.register-link a {
   color: #0a66c2;
   text-decoration: none;
   font-weight: 600;
 }
-
-a:hover {
-  text-decoration: underline;
-}
-
-.error-message {
-  background-color: #fef2f1;
-  color: #d11124;
-  padding: 12px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 14px;
-  border: 1px solid #d11124;
-}
-  

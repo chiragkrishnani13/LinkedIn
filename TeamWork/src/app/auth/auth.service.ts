@@ -113,8 +113,8 @@ export class AuthService {
       }
     }, 1000);
   }
+
+  // isLoggedInUser(){}
 }
-
-
 
 
