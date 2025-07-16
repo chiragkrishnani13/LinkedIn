@@ -5,10 +5,14 @@ import { RouterModule } from '@angular/router';
 
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { CompanyService } from './services/company.service';
+import { MypostComponent } from './mypost/mypost.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    MypostComponent,
+    UserDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -16,7 +20,9 @@ import { CompanyService } from './services/company.service';
     RouterModule
   ],
   exports: [
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    UserDetailsComponent,
+    MypostComponent
   ],
   providers: [
     CompanyService

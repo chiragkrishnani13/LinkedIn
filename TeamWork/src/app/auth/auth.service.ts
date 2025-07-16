@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
@@ -10,6 +11,9 @@ export class AuthService {
   loginAttempts = 0;
   isLocked = false;
   lockoutEndTime = 0;
+  isLoggedInUser:boolean = false
+  isLoggedInAdmin:boolean = false
+  LoggedInUser!:any
 
   constructor() {
     // Check if account is locked
@@ -113,8 +117,18 @@ export class AuthService {
       }
     }, 1000);
   }
+  userType(){
+    localStorage.setItem("isLoggedInUser",JSON.stringify(this.isLoggedInUser))
+    localStorage.setItem("isLoggedInAdmin",JSON.stringify(this.isLoggedInAdmin))
+  }
+  loadData(){
+    this.isLoggedInUser =JSON.parse(localStorage.getItem('isLoggedInUser' ) ?? 'false')
+    this.isLoggedInAdmin = JSON.parse(localStorage.getItem('isLoggedInAdmin' ) ?? 'false') 
+    this.LoggedInUser = JSON.parse(localStorage.getItem('loggedInUser')?? ' {}')
+    console.log(this.isLoggedInAdmin);
+  }
+  
 
-  // isLoggedInUser(){}
 }
 
 

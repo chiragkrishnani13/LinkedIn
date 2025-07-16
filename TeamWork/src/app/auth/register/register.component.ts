@@ -10,6 +10,7 @@ type User = {
   fullname?: string;
   dob?: string;
   joinDate?: string;
+  userType?:string;
 };
 
 @Component({
@@ -26,12 +27,19 @@ export class RegisterComponent {
   dob: string = '';
   isLoading: boolean = false;
   errorMessage: string = '';
+  userType:string='';
+  options = ['Canditate', 'Admin',];
+  selectedOption:any
 
   constructor(private router: Router, private authService: AuthService) { }
+  
+
 
   onSubmit(): void {
     this.isLoading = true;
     this.errorMessage = '';
+    this.authService.userType()
+    
     
     // Validation
     if (!this.username || !this.email || !this.fullname || !this.password || !this.confirmPassword || !this.dob) {
@@ -77,7 +85,7 @@ export class RegisterComponent {
       fullname: this.fullname,
       password: this.password,
       dob: this.dob,
-      joinDate: new Date().toISOString()
+      userType:this.selectedOption
     };
 
     // Log to console
@@ -86,6 +94,7 @@ export class RegisterComponent {
     // Store user in localStorage
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('loggedInUser',this.username)
     
     // Make sure we're logged out
     this.authService.logout();
@@ -100,7 +109,21 @@ export class RegisterComponent {
 
   navigateToLogin(): void {
     this.router.navigate(['/login']);
+
   }
+  onSelectionChange(){
+    if(this.selectedOption == "Admin"){
+      this.authService.isLoggedInAdmin = true;
+    }
+    else if(this.selectedOption == "Canditate"){
+      this.authService.isLoggedInUser = true
+    }
+  }
+  ngOnInit(){
+    this.onSelectionChange()
+    console.log(this.username);
+  }
+
 }
 
 

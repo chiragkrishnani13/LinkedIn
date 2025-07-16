@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
-import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,10 @@ import { AdminModule } from './admin/admin.module';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
+    AdminModule,
     AuthModule,
-    SharedModule,
-    AdminModule
+    ShareModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

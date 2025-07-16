@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CompanyService } from 'src/app/admin/services/company.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CompanyService } from 'src/app/admin/services/company.service';
 export class HomePageComponent implements OnInit {
   companys: any[] = [];
   
-  constructor(private service: CompanyService) {}
+  constructor(private service: CompanyService,private router:Router) {}
   
   ngOnInit() {
     // Get company data from service
@@ -23,4 +24,5 @@ export class HomePageComponent implements OnInit {
       }
     });
   }
+
 }

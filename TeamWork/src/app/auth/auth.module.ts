@@ -6,18 +6,17 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
-import { SharedModule } from '../shared/shared.module';
-
+import { ShareModule } from '../share/share.module';
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
-    SharedModule
+    ShareModule
   ],
   providers: [
     AuthService

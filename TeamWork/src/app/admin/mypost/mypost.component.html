@@ -1,0 +1,33 @@
+
+            <div class="center-feed">
+                <div  *ngFor="let company of companys" class="job-post">
+                <div class="job-header">
+                    <div class="company-avatar">{{company.companyName}}</div>
+                    <div class="job-info">
+                        <h3>{{company.role}}</h3>
+                        <div class="job-meta">{{company.location}}</div>
+                    </div>
+                </div>
+                <div class="job-description">
+                    {{company.jobDetails}}
+                </div>
+
+                <a  [routerLink]="['/single-post',company.id]">view more</a>
+
+                
+                <div class="job-actions">
+                    <div class="interaction-buttons">
+                        <button class="interact-btn">👍 Like (45)</button>
+                        <button class="interact-btn">💬 Comment (12)</button>
+                        <button class="interact-btn">💾 Save</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary apply-btn">Edit</button>
+                        <button class="btn btn-danger" >Delete</button>
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
+            

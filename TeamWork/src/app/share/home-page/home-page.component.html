@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
   <link rel="stylesheet" href="home-page.component.css"/>
 </head>
 <body>
+    <app-navbar></app-navbar>
     <div class="main-content">
         <!-- Left Sidebar -->
         <div class="left-sidebar">
@@ -56,7 +56,7 @@
                     {{company.jobDetails}}
                 </div>
 
-                <a [routerLink]="['/single-post',company.id]">view more</a>
+                <a  [routerLink]="['/single-post',company.id]">view more</a>
 
                 
                 <div class="job-actions">
@@ -65,7 +65,7 @@
                         <button class="interact-btn">💬 Comment (12)</button>
                         <button class="interact-btn">💾 Save</button>
                     </div>
-                    <button class="apply-btn">Apply Now</button>
+                    <button [routerLink]="['/candiateDetails',company.id]"  class="apply-btn"> Apply Now</button>
                 </div>
             </div>
 
@@ -99,6 +99,7 @@
             </div>
         </div>
     </div>
+    <app-footer></app-footer>
 </body>
 </html>
 

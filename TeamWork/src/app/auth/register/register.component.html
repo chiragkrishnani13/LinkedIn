@@ -66,6 +66,14 @@
           [(ngModel)]="dob"
           required>
       </div>
+
+      <select [(ngModel)]="selectedOption"      (change)="onSelectionChange()"
+ name="mySelect">
+        <option value="" disabled selected>Are you Canditate or Admin</option>
+        <option *ngFor="let item of options" [value]="item">{{ item }}</option>
+      </select>
+      <p>You selected: {{ selectedOption }}</p>
+
       
       <div class="submit-container">
         <button type="submit" class="submit-button" [disabled]="isLoading">

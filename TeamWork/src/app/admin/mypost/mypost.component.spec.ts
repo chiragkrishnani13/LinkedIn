@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharedComponent } from './shared.component';
+import { MypostComponent } from './mypost.component';
 
-describe('SharedComponent', () => {
-  let component: SharedComponent;
-  let fixture: ComponentFixture<SharedComponent>;
+describe('MypostComponent', () => {
+  let component: MypostComponent;
+  let fixture: ComponentFixture<MypostComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SharedComponent]
+      declarations: [MypostComponent]
     });
-    fixture = TestBed.createComponent(SharedComponent);
+    fixture = TestBed.createComponent(MypostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

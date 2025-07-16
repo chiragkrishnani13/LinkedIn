@@ -1,0 +1,38 @@
+<h2>Job Application Form</h2>
+<form [formGroup]="applicationForm" (ngSubmit)="submitApplication()">
+
+  <label>Full Name:</label>
+  <input formControlName="fullName" type="text" />
+  <div *ngIf="applicationForm.get('fullName')?.invalid && applicationForm.get('fullName')?.touched">
+    Full Name is required
+  </div>
+
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+  <div *ngIf="applicationForm.get('email')?.invalid && applicationForm.get('email')?.touched">
+    Valid Email is required
+  </div>
+
+  <label>Phone Number:</label>
+  <input formControlName="phone" type="text" />
+
+  <label>Address:</label>
+  <input formControlName="address" type="text" />
+
+  <label>Position Applying For:</label>
+  <input formControlName="position" type="text" />
+
+  <label>Years of Experience:</label>
+  <input formControlName="experience" type="number" />
+
+  <label>Expected Salary:</label>
+  <input formControlName="expectedSalary" type="text" />
+
+  <label>Cover Letter:</label>
+  <textarea formControlName="coverLetter"></textarea>
+
+  <label>Resume:</label>
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <button type="submit">Submit Application</button>
+</form>
