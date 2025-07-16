@@ -1,0 +1,128 @@
+<div class="container">
+  <div class="sidebar">
+    <div id="profile-pic">
+      <img src="/assets/pfp.png" alt="Profile" style="height: 10rem;">
+      <span class="edit-icon" (click)="enableEditMode()">✎</span>
+    </div>
+    <h2>User Name</h2>
+    <p class="job-title">Aspiring Professional</p>
+
+    <nav>
+      <button class="active">Resume</button>
+      <button routerLink="/register">Register / Login</button>
+      <!-- <button *ngIf="isUserLoggedIn()">Log Out</button> -->
+      <a routerLink="/personalInfo">
+        <button>Personal Info</button>
+      </a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <h1>Resume Information</h1>
+    <form [formGroup]="userResumeFormGroup" (ngSubmit)="submitResumeData()">
+
+      <!-- College Name -->
+      <div class="form-group">
+        <label for="college">College Name</label>
+        <input formControlName="college" id="college" type="text" placeholder="Enter your college name" [disabled]="!isEditMode">
+        <div class="errors">
+          <p *ngIf="isFormControlError('college')">College name is required</p>
+        </div>
+      </div>
+
+      <!-- Degree -->
+      <div class="form-group">
+        <label for="degree">Degree</label>
+        <input formControlName="degree" id="degree" type="text" placeholder="Enter your degree" [disabled]="!isEditMode">
+        <div class="errors">
+          <p *ngIf="isFormControlError('degree')">Degree is required</p>
+        </div>
+      </div>
+
+      <!-- Graduation Year -->
+      <div class="form-group">
+        <label for="gradYear">Year of Graduation</label>
+        <input formControlName="gradYear" id="gradYear" type="text" placeholder="e.g., 2025" [disabled]="!isEditMode">
+        <div class="errors">
+          <p *ngIf="isFormControlError('gradYear')">Graduation year is required</p>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="form-group">
+  <label for="skills">Skills</label>
+    <select formControlName="skills" id="skills" [disabled]="!isEditMode">
+        <option value="" disabled selected>Select a technical skill</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+        <option value="Angular">Angular</option>
+        <option value="React">React</option>
+        <option value="Node.js">Node.js</option>
+        <option value="SQL">SQL</option>
+        <option value="MongoDB">MongoDB</option>
+        <option value="Docker">Docker</option>
+        <option value="Git">Git</option>
+        <option value="HTML/CSS">HTML/CSS</option>
+    </select>
+    <div class="errors">
+        <p *ngIf="isFormControlError('skills')">Please select a skill</p>
+    </div>
+    </div>
+
+
+      <!-- Fields of Interest -->
+      <div class="form-group">
+  <label for="interests">Fields You're Interested In</label>
+  <select formControlName="interests" id="interests" multiple  [disabled]="!isEditMode">
+    <option value="Web Development">Web Development</option>
+    <option value="Mobile App Development">Mobile App Development</option>
+    <option value="Machine Learning">Machine Learning</option>
+    <option value="Artificial Intelligence">Artificial Intelligence</option>
+    <option value="Data Science">Data Science</option>
+    <option value="UI/UX Design">UI/UX Design</option>
+    <option value="Cloud Computing">Cloud Computing</option>
+    <option value="Cybersecurity">Cybersecurity</option>
+    <option value="Game Development">Game Development</option>
+    <option value="DevOps">DevOps</option>
+    <option value="AR/VR">AR/VR</option>
+  </select>
+  <div class="errors">
+    <p *ngIf="isFormControlError('interests')">Please select at least one field</p>
+  </div>
+</div>
+
+      <!-- Experience -->
+      <div class="form-group">
+        <label for="experience">Experience</label>
+        <input formControlName="experience" id="experience" type="text" placeholder="e.g., Intern at XYZ, 6 months" [disabled]="!isEditMode">
+        <div class="errors">
+          <p *ngIf="isFormControlError('experience')">Experience is required</p>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="form-group">
+        <label for="projects">Projects</label>
+        <input formControlName="projects" id="projects" type="text" placeholder="e.g., Portfolio Website, Chatbot" [disabled]="!isEditMode">
+        <div class="errors">
+          <p *ngIf="isFormControlError('projects')">Mention at least one project</p>
+        </div>
+      </div>
+
+       <label for="resumeFile">Upload Your Resume (PDF)</label>
+        <input type="file" id="resumeFile" accept=".pdf">
+        <!-- <div class="errors">
+            <p *ngIf="resumeUploadError">{{ resumeUploadError }}</p>
+        </div> -->
+
+      <!-- Submit Button -->
+      <div class="buttons">
+        <button type="reset" class="discard">Discard</button>
+        <button type="submit" class="save">Save Resume Info</button>
+      </div>
+
+    </form>
+  </div>
+</div>

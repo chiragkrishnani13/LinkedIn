@@ -1,0 +1,165 @@
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-pic {
+  position: relative;
+  /* width: 100px; */
+  /* height: 100px; */
+}
+
+#profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: orange;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.job-title {
+  color: gray;
+  margin-top: 5px;
+}
+
+nav {
+  margin-top: 40px;
+  width: 100%;
+}
+
+nav button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+nav button.active {
+  background: #ffe7cf;
+  color: #d97706;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  padding-top: 10px;
+  background: #fff;
+  border-radius: 20px;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow-y: auto;
+}
+
+.main-content h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Form Structure */
+form {
+  width: 100%;
+}
+
+/* Generic Field Grouping */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* For label + input */
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  padding-top: 10px;
+}
+
+/* Input styling */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.discard {
+  padding: 12px 24px;
+  border: 2px solid orange;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+}
+
+.save {
+  padding: 12px 24px;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Error messages */
+.errors p {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Responsive / multiple inputs in one row */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+select[multiple] {
+  height: 150px;
+  background: #fafafa;
+}

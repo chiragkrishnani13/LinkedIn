@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-pic {
+  position: relative;
+  /* width: 100px; */
+  /* height: 100px; */
+}
+
+.profile-pic img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: orange;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+.job-title {
+  color: gray;
+  margin-top: 5px;
+}
+
+nav {
+  margin-top: 40px;
+  width: 100%;
+}
+
+nav button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+nav button.active {
+  background: #ffe7cf;
+  color: #d97706;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.main-content h1 {
+  margin-bottom: 20px;
+}
+
+.gender {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.email-group {
+  position: relative;
+}
+
+.verified {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  background: #e6ffed;
+  color: #22c55e;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discard {
+  padding: 12px 24px;
+  border: 2px solid orange;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+}
+
+.save {
+  padding: 12px 24px;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+label{
+  padding-top: 10px;
+}
+

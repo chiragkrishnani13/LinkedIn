@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
 import { ShareModule } from './share/share.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ShareModule } from './share/share.module';
     AppRoutingModule,
     AdminModule,
     AuthModule,
-    ShareModule
+    ShareModule,
+    UserModule
 
   ],
   providers: [],
