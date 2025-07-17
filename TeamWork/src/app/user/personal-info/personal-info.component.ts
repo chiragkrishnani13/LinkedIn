@@ -61,7 +61,7 @@ export class PersonalInfoComponent {
   loadUsers() {
     this.users = JSON.parse(localStorage.getItem("users") ?? "[]");
     
-    const userData = localStorage.getItem('loggedInUser');
+    const userData = localStorage.getItem('selectedProfile');
     if (userData) {
       this.username = JSON.parse(userData);  // convert string to object
     }

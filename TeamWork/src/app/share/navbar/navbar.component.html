@@ -18,7 +18,7 @@
         <li><a *ngIf="admin" routerLink="/companyDetails">Create Post</a></li>
         <li><a (click)="viewPost()" *ngIf="admin" routerLink="/mypost">My Post</a></li>
         <li><a *ngIf="user" >Saved Jobs</a></li>
-        <li><a href="#">Profile</a></li>
+        <li><a href="#" (click)="seeYourProfile()">Profile</a></li>
       </ul>
     </div>
   </nav>
