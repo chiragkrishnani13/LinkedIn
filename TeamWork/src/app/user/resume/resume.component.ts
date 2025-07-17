@@ -9,9 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ResumeComponent {
 
   isEditMode: boolean = false;
+  username:any;
 
   ngOnInit(){
     this.userResumeFormGroup.disable(); // Disable all controls initially
+    this.loadUsers();
   }
 
   userResumeFormGroup = new FormGroup({
@@ -58,5 +60,12 @@ interests: new FormControl<string[]>([], [Validators.required]),
 
     this.userResumeFormGroup.disable();  // Lock the form again
     this.isEditMode = false;
+  }
+
+  loadUsers(){
+    const userData = localStorage.getItem('loggedInUser');
+    if (userData) {
+      this.username = JSON.parse(userData);  // convert string to object
+    }
   }
 }

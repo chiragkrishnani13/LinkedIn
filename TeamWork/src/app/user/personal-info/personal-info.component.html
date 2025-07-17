@@ -1,20 +1,20 @@
 <div class="container">
   <div class="sidebar">
     <div id="profile-pic">
-      <img src="/assets/pfp.png" alt="Profile" style="height: 10rem;">
+      <img src="/assets/pfp.jpg" alt="Profile" style="height: 10rem;">
       <span class="edit-icon">✎</span>
     </div>
-    <h2>Name</h2>
-    <p class="job-title">job-title</p>
+    <h2>{{username?.fullName}}</h2>
+    <!-- <p class="job-title">job-title</p> -->
     <nav>
       <button class="active">Personal Information</button>
       <!-- <button *ngIf="!isUserLoggedIn()" routerLink="/register">Register / Login</button> -->
-       <button routerLink="/register">Register / Login</button>
+       <!-- <button routerLink="/register">Register / Login</button> -->
       <!-- <button *ngIf="isUserLoggedIn()">Log Out</button> -->
-      <!-- <button routerlink="/resumePage">Resume</button> -->
-      <a routerLink="/resumePage">
+      <button routerLink="/resume">Resume</button>
+      <!-- <a routerLink="/resume" (click)="clicked()">
         <button>Resume</button>
-      </a>
+      </a> -->
     </nav>
   </div>
 

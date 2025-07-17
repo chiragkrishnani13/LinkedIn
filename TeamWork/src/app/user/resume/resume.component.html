@@ -1,15 +1,15 @@
 <div class="container">
   <div class="sidebar">
     <div id="profile-pic">
-      <img src="/assets/pfp.png" alt="Profile" style="height: 10rem;">
+      <img src="/assets/pfp.jpg" alt="Profile" style="height: 10rem;">
       <span class="edit-icon" (click)="enableEditMode()">✎</span>
     </div>
-    <h2>User Name</h2>
+    <h2>{{username?.fullName}}</h2>
     <p class="job-title">Aspiring Professional</p>
 
     <nav>
       <button class="active">Resume</button>
-      <button routerLink="/register">Register / Login</button>
+      <!-- <button routerLink="/register">Register / Login</button> -->
       <!-- <button *ngIf="isUserLoggedIn()">Log Out</button> -->
       <a routerLink="/personalInfo">
         <button>Personal Info</button>
